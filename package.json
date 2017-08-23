@@ -1,0 +1,15 @@
+{
+  "name": "appiloque_contact_us",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "description": "A simple contact us form for Appiloque",
+  "main": "index.js",
+  "author": "Carl Dalid",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.15.2",
+    "debug": "~2.6.3"
+  }
+}
