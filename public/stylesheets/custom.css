@@ -22,6 +22,10 @@
     padding-left: 0px;
 }
 
+.notifwrapper p {
+    padding-top: 10px;
+}
+
 /* CSS Spinner */
 .spinner {
     margin: 15px auto 0;

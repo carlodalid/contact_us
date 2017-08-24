@@ -54,10 +54,10 @@ router.post('/', function(request, response) {
         subject: 'Someone is trying to reach you!',
         html: msgBody,
     }).catch((error) => {
-        console.log(error);
+        response.status(500).json({ msg: 'Something went wrong!' })
     });
 
-    response.json({ success: true });
+    response.json({ msg: 'Thank you for contacting us!' });
 });
 
 router.get('*', function(request, response) {
