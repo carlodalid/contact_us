@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var nodemailer  = require('nodemailer');
 var transporter = nodemailer.createTransport({
     host: process.env.SMTP,
-    port: process.env.PORT,
+    port: process.env.SMTP_PORT,
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS
@@ -66,6 +66,6 @@ router.get('*', function(request, response) {
 
 app.use('/', router);
 
-app.listen(3000, function(){
-    console.log("We're live and up on port 3000");
+app.listen(process.env.PORT || 3000, function(){
+    console.log("We're live and up on port " + process.env.DEFAULT_PORT);
 });
