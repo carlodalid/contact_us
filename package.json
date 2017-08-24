@@ -10,7 +10,9 @@
   "author": "Carl Dalid",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "debug": "~2.6.3",
     "express": "~4.15.2",
-    "debug": "~2.6.3"
+    "nodemailer": "^4.0.1"
   }
 }
