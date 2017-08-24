@@ -1,0 +1,16 @@
+extends layout.pug
+
+block head
+ title= title
+ link(href="/stylesheets/custom.css", rel="stylesheet")
+
+block content
+ div.row
+   div.error-template
+     h1 Oops!
+     h2 404 Not Found
+     div.error-details Sorry, an error has occured, Requested page not found!
+     div.error-actions
+       a(href='/', class='btn btn-primary')
+         i.icon-home.icon-white
+         | Take Me Back

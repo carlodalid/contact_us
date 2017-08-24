@@ -5,6 +5,7 @@ var path       = require('path');
 
 var app = express();
 
+app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -35,7 +36,7 @@ router.use(function(request, response, next){
 });
 
 router.get('/', function(request, response) {
-    response.sendFile(dir + 'index.html');
+    response.render('index', { title: 'Appiloque Contact Us' });
 });
 
 router.post('/', function(request, response) {
@@ -61,7 +62,7 @@ router.post('/', function(request, response) {
 });
 
 router.get('*', function(request, response) {
-    response.sendFile(dir + '404.html');
+    response.render('404', { title: '404 Not Found' });
 });
 
 app.use('/', router);
