@@ -15,20 +15,20 @@ block content
          fieldset
            legend.text-center Contact Us
 
-           div.form-group
+           div.form-group.nameForm
              label.col-md-3.control-label(for="name") First Name
              div.col-md-9
-               input#name.form-control(name="name", type="text", placeholder="Your firstname", required="true")
+               input#name.form-control(name="name", type="text", placeholder="Your first name")
 
-           div.form-group
+           div.form-group.emailForm
              label.col-md-3.control-label(for="email") Email Address
              div.col-md-9
-               input#email.form-control(name="email", type="email", placeholder="Your email address", required="true")
+               input#email.form-control(name="email", type="email", placeholder="Your email address")
 
-           div.form-group
+           div.form-group.messageForm
              label.col-md-3.control-label(form="message") Message Body
              div.col-md-9
-               textarea.form-control#message(name="message", placeholder="Please enter your message here...", rows="5", required="true")
+               textarea.form-control#message(name="message", placeholder="Please enter your message here...", rows="5")
 
            div.form-group
              div.col-md-3.col-md-offset-3.submitwrapper
