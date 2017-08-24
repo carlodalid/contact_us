@@ -19,6 +19,7 @@
 }
 
 .notifwrapper {
+    text-align: center;
     padding-left: 0px;
 }
 
@@ -29,13 +30,13 @@
 /* CSS Spinner */
 .spinner {
     margin: 15px auto 0;
-    text-align: left;
+    text-align: center;
 }
 
 .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #333;
+    background-color: #fff;
 
     border-radius: 100%;
     display: inline-block;
