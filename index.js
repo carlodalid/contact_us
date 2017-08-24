@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express    = require('express');
 var bodyParser = require('body-parser');
 var path       = require('path');
@@ -9,11 +10,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var nodemailer  = require('nodemailer');
 var transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
+    host: process.env.SMTP,
+    port: process.env.PORT,
     auth: {
-        user: '10a330b546c127',
-        pass: '9547a72f9180c5'
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     }
 });
 
@@ -38,13 +39,18 @@ router.get('/', function(request, response) {
 });
 
 router.post('/', function(request, response) {
+    var currentTimeStamp = new Date().toISOString().
+                            replace(/T/, ' ').
+                            replace(/\..+/, '');
+ 
     var firstname = request.body.name;
     var email     = request.body.email;
-    var msgBody   = request.body.message;
+    var msgBody   = "<p>Someone just sent you an email</p><p>Sent on: " + currentTimeStamp + "</p>";
+    msgBody      += "<p>" + request.body.message + "</p>";
 
     transporter.sendMail({
         from: firstname + " <" + email + ">",
-        to: 'carlodalid@gmail.com',
+        to: process.env.ADMIN_EMAIL,
         subject: 'Someone is trying to reach you!',
         html: msgBody,
     }).catch((error) => {
